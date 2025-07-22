@@ -6,5 +6,6 @@ children = [
     {"name": "Eve", "age": 6, "height": 99}
 ]
 
-criteria = lambda child: child["age"] > 3 and child["height"] > 100
-print("Eligible children for the fun park: ", list(filter(criteria, children)))     
+criteria=lambda child: child["age"] > 3 and child["height"] > 100
+eligible_children=[child for child in children if criteria(child)]
+print("Eligible children for the fun park: ", list(filter(criteria, children)))
